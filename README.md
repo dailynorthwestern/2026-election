@@ -80,4 +80,4 @@ All three major pill headings share `src/components/election/SectionHeading.astr
 
 In `src/data/races.js`, set `flourish` to a numeric visualization ID or public Flourish URL to display the existing embed. Set `flourish: null` to show the race's `articles` array instead. Add related reporting as `{ title: 'Published headline', url: 'https://dailynorthwestern.com/...' }`. An empty array renders nothing below the image/text row. Legacy `flourishId` and `flourishUrl` remain supported when `flourish` is omitted.
 
-Race article links and Reported Stories card headlines share `src/styles/story-headline.scss`.
+Reported Stories headline styles use `.reported-story-headline` in `src/styles/reported-stories.scss`. Race article headline styles use `.race-article-headline` in `src/styles/race-features.scss`. These styles are independent.
