@@ -7,5 +7,5 @@ const { image, imageAlt = '', blurb } = Astro.props;
   {image && typeof image === 'object' ?
     <Image class="election-illustration-image" src={image} alt={imageAlt} widths={[400, 800, 1200]} sizes="(min-width: 1025px) 60vw, (min-width: 768px) 86vw, calc(100vw - 40px)" format="webp" /> : image ? <img class="election-illustration-image" src={asset(image)} alt={imageAlt} /> :
     <span class="election-illustration-placeholder">Election illustration placeholder</span>}
-  <div class="election-blurb"><p>{blurb}</p></div>
 </div>
+<div class="election-blurb"><p>{blurb}</p></div>

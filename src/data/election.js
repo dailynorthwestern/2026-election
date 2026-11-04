@@ -11,7 +11,7 @@ export const election = {
   hero: {
     image: heroImage,
     imageAlt: 'Midterm election coverage illustration with I Voted stickers and a map.',
-    blurb: 'General hero blurb here, whatever Claire wants it to say about the election issue.',
+    blurb: `Polls closed in Evanston at 7 p.m., concluding an election cycle marked by major retirements. The March 17 primary elections featured competitive races to represent the city in the Illinois State Senate, U.S. House of Representatives and U.S. Senate. Democrats were heavily favored in all general election races.`,
   },
   raceSections: [
     {
