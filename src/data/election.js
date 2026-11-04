@@ -1,4 +1,5 @@
 import rollImage from "../assets/roll.png";
+import mapImage from "../assets/map.png";
 
 // Image paths in public/ can start with /; the component adds Astro's base.
 export const election = {
@@ -18,6 +19,8 @@ export const election = {
   },
   hero: {
     image: rollImage,
+    rightImage: mapImage,
+    rightImageAlt: "Illustrated street map.",
     imageAlt: "A roll of I Voted stickers for the 2026 election.",
     blurb: `The 2026 Midterm Elections marked a once-in-a-generation opportunity for Evanston residents to decide who will represent them in Evanston in Springfield and Washington as Illinois saw an exodus of elected officials this year.
 

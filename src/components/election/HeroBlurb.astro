@@ -1,13 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import { asset } from '../../lib/content.js';
-const { image, imageAlt = '', blurb } = Astro.props;
+const { image, imageAlt = '', rightImage, rightImageAlt = '', blurb } = Astro.props;
 ---
-<div class="hero-blurb-layout">
-  {image && <div class="hero-blurb-artwork">
+<div class:list={["hero-blurb-layout", { "hero-blurb-layout--with-map": !!rightImage }]}>
+  {image && <div class="hero-blurb-roll">
     {typeof image === 'object' ?
-      <Image class="hero-blurb-image" src={image} alt={imageAlt} widths={[400, 800, 1200]} sizes="(min-width: 1025px) 36vw, (min-width: 768px) 52vw, 80vw" format="webp" /> :
-      <img class="hero-blurb-image" src={asset(image)} alt={imageAlt} />}
+      <Image class="hero-blurb-image-roll" src={image} alt={imageAlt} widths={[400, 800, 1200]} sizes="(min-width: 1025px) 36vw, (min-width: 768px) 52vw, 80vw" format="webp" /> :
+      <img class="hero-blurb-image-roll" src={asset(image)} alt={imageAlt} />}
+  </div>}
+  {rightImage && <div class="hero-blurb-map">
+    {typeof rightImage === 'object' ?
+      <Image class="hero-blurb-image-map" src={rightImage} alt={rightImageAlt} widths={[400, 800, 1200]} sizes="(min-width: 1025px) 18vw, (min-width: 768px) 26vw, 80vw" format="webp" /> :
+      <img class="hero-blurb-image-map" src={asset(rightImage)} alt={rightImageAlt} />}
   </div>}
   <div class="election-blurb"><p>{blurb}</p></div>
 </div>
+
