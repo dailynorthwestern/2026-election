@@ -6,17 +6,23 @@ const { id } = Astro.props;
 .election-section-heading {
   width: 100%;
   margin: 0 auto 28px;
-  padding: 14px 24px 18px;
-  border: 4px solid var(--election-red);
-  border-radius: 999px;
-  background: var(--election-light-blue);
-  color: var(--election-blue);
+  
+  color: var(--election-light-blue);
   text-align: center;
   font-family: var(--font-election-headline);
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(2rem, 4.4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.2;
+}
+.election-section-heading::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin-top: 16px;
+  border-top: 1px solid var(--election-red);
+  border-bottom: 1px solid var(--election-red);
 }
 @media (max-width: 767px) {
   .election-section-heading { border-width: 3px; margin-bottom: 20px; }

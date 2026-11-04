@@ -8,41 +8,13 @@
   font-style: normal;
 }
 
-.reported-stories-controls { display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 16px; }
-.reported-stories-controls button {
-  width: 48px;
-  height: 44px;
-  border: 3px solid var(--election-red);
-  border-radius: 999px;
-  background: var(--election-light-blue);
-  color: var(--election-blue);
-  font-size: 1.6rem;
-  line-height: 1;
-}
-.reported-stories-controls button:disabled { opacity: .4; cursor: default; }
-.reported-stories-controls button:not(:disabled):hover { background: var(--election-white); }
-.reported-stories-track {
-  --story-gap: clamp(16px, 3vw, 44px);
-  --story-column: calc((100% - 2 * var(--story-gap)) / 3);
+.reported-stories-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  gap: var(--story-gap);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--election-red) var(--election-blue);
-  padding: 6px 0 18px;
-}
-.reported-stories-group {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, 1fr);
-  gap: var(--story-gap);
-  min-width: 0;
-  scroll-snap-align: start;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  width: 80%;
+  margin-inline: auto;
 }
 .reported-story-card {
   display: flex;
@@ -52,7 +24,7 @@
   background: var(--election-light-blue);
   text-decoration: none;
 }
-.reported-story-image { aspect-ratio: 1.1; overflow: hidden; background: var(--election-light-blue); }
+.reported-story-image { flex-shrink: 0; aspect-ratio: 1.1; overflow: hidden; background: var(--election-light-blue); }
 .reported-story-image img { width: 100%; height: 100%; object-fit: cover; }
 .reported-story-info {
   flex: 1;
@@ -65,10 +37,10 @@
 .reported-story-info p { margin: 4px 0 0; font-size: .9375rem; line-height: 1.5; }
 a.reported-story-card:hover h3 { text-decoration: underline; text-underline-offset: .2em; }
 .reported-stories :focus-visible { outline: 3px solid var(--election-white); outline-offset: -3px; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .reported-stories-grid { width: 90%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 767px) {
   .reported-stories { padding: 32px 0 40px; }
-  .reported-stories-track { --story-column: 84%; grid-auto-columns: calc(3 * var(--story-column) + 2 * var(--story-gap)); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .reported-stories-track { scroll-behavior: auto; }
+  .reported-stories-grid { width: calc(100% - 40px); grid-template-columns: minmax(0, 1fr); }
 }

@@ -58,7 +58,7 @@ Race accordions use native `details`/`summary`, start expanded and work with a k
 
 Edit `src/data/reportedStories.js` to add or replace articles. Each entry accepts `id`, `title`, `author`, `authorUrl`, `date`, optional `dateISO`, `url`, `image` and `imageAlt`. Empty URLs render as non-link placeholders; a published story's entire card links to its article.
 
-`ReportedStories.astro` groups entries in batches of six: the first three across the top row, then three across the bottom row. Further groups extend horizontally in one shared scroller. Desktop arrow buttons advance a group; on mobile they advance one column. Touch gestures, the scrollbar, keyboard arrows on the focused scroller and Tab navigation are also supported. New styling is isolated in `src/styles/reported-stories.scss`; the election hero stylesheet remains unchanged.
+`ReportedStories.astro` renders all entries in a regular grid: four columns above 1024px, two on tablet and one below 768px. The grid is centered at 80% width on desktop, 90% on tablet and full width minus 40px on mobile, with 16px gaps. Its heading keeps the shared content width. Styling is isolated in `src/styles/reported-stories.scss`; there are no carousel controls or scripts.
 
 ## Shared content width
 
