@@ -89,27 +89,6 @@ As of 8:17 p.m., Hanley had received 82.27% of the vote according to data from t
 — Reported by Michelle Wu`,
   },
   {
-    id: "state-house-18",
-    title: "Illinois' 18th State House District",
-    layout: "image-left",
-    image:
-      "https://dailynorthwestern.com/wp-content/uploads/2023/01/gabel.jpeg",
-    imageAlt: "",
-    imageCredit: "Daily file photo by Courtney Morrison",
-    flourish: null,
-    articles: [
-      {
-        title:
-          "State House Majority Leader Robyn Gabel projected to win reelection",
-        url: "https://dailynorthwestern.com/2026/11/03/lateststories/state-house-majority-leader-robyn-gabel-projected-to-win-reelection-2/",
-      },
-    ],
-    description: `Illinois House Majority Leader and State Rep. Robyn Gabel (D-Evanston) is projected to win reelection and serve her ninth term in the state House of Representatives, according to the Associated Press. 
-
-The Associated Press called the race in favor of Gabel at 8:07 p.m., according to FOX 32 Chicago. 
-— Reported by Deolu Akingbade`,
-  },
-  {
     id: "state-house-17",
     title: "Illinois' 17th State House District",
     layout: "image-right",
@@ -129,5 +108,26 @@ The Associated Press called the race in favor of Gabel at 8:07 p.m., according t
 
 The Associated Press called the race in favor of Gong-Gershowitz at 8:34 p.m. 
 — Reported by Lauren Shein`,
+  },
+  {
+    id: "state-house-18",
+    title: "Illinois' 18th State House District",
+    layout: "image-left",
+    image:
+      "https://dailynorthwestern.com/wp-content/uploads/2023/01/gabel.jpeg",
+    imageAlt: "",
+    imageCredit: "Daily file photo by Courtney Morrison",
+    flourish: null,
+    articles: [
+      {
+        title:
+          "State House Majority Leader Robyn Gabel projected to win reelection",
+        url: "https://dailynorthwestern.com/2026/11/03/lateststories/state-house-majority-leader-robyn-gabel-projected-to-win-reelection-2/",
+      },
+    ],
+    description: `Illinois House Majority Leader and State Rep. Robyn Gabel (D-Evanston) is projected to win reelection and serve her ninth term in the state House of Representatives, according to the Associated Press. 
+
+The Associated Press called the race in favor of Gabel at 8:07 p.m., according to FOX 32 Chicago. 
+— Reported by Deolu Akingbade`,
   },
 ];
