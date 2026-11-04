@@ -82,49 +82,34 @@
 }
 .election-live-link:hover { background: var(--election-white); text-decoration: underline; }
 .election-page :focus-visible { outline: 3px solid var(--election-white); outline-offset: 5px; }
-.election-illustration {
-  position: relative;
+.hero-blurb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 24px;
+  align-items: center;
+}
+.hero-blurb-artwork {
   display: grid;
   place-items: center;
-  min-height: clamp(280px, 28vw, 440px);
-  padding: 48px 7%;
-  border-radius: 22px;
-  background: var(--election-light-blue);
+  min-width: 0;
   overflow: hidden;
 }
-.election-illustration-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.election-illustration--has-image {
-  background: var(--election-blue);
-}
-.election-illustration--has-image .election-illustration-image {
-  object-fit: contain;
-  filter: blur(2px);
-  opacity: .8;
-}
-.election-illustration-placeholder {
-  position: absolute;
-  inset: 0;
-  padding: 12px;
-  color: var(--election-blue);
-  font-size: .75rem;
-  text-align: left;
-  border: 2px dashed var(--election-red);
-  border-radius: inherit;
+.hero-blurb-image {
+  // Compensate for the transparent space around the sticker roll.
+  width: 150%;
+  max-width: none;
+  height: auto;
 }
 .election-blurb {
-  position: relative;
-  width: min(100%, 1000px);
-  margin: 24px auto 0;
-  
+  min-width: 0;
+  margin: 0;
   color: var(--election-light-blue);
 }
 .election-blurb p { white-space: pre-line; max-width: 660px; margin: auto; font-size: clamp(1.125rem, 1.3vw, 1.75rem); line-height: 1.4; text-wrap: balance; }
+@media (max-width: 767px) {
+  .hero-blurb-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .hero-blurb-artwork { width: min(65%, 280px); margin-inline: auto; }
+}
 .election-races { margin-top: 20px; }
 .election-races summary {
   display: flex;
@@ -164,8 +149,6 @@
   .election-hero h1 { width: calc(100% - 52px); font-size: clamp(1.75rem, 7.5vw, 2.8rem); }
   .election-subtitle { margin: 16px auto 20px; }
   .election-live-link { border-width: 3px; padding: 7px 10px; margin-bottom: 20px; }
-  .election-illustration { min-height: 210px; padding: 30px 7%; border-radius: 16px; }
-  .election-illustration-placeholder { font-size: .625rem; padding: 8px; }
   .election-blurb p { font-size: 1.0625rem; line-height: 1.35; }
   .election-races { margin-top: 12px; }
   .election-races summary { border-width: 3px; padding: 7px 12px; }
