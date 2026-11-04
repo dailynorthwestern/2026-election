@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import { asset } from '../../lib/content.js';
+import '../../styles/photo-gallery.scss';
+const { images } = Astro.props;
+---
+<section class="photo-gallery" aria-label="Election photo gallery">
+  <div class="photo-gallery-grid">
+    {images.map(({ id, image, alt, credit }, index) => (
+      <figure class="photo-gallery-item" id={id}>
+        {image ? (
+          typeof image === 'object' ?
+            <Image class="photo-gallery-image" src={image} alt={alt} widths={[400, 800, 1200]} sizes="(min-width: 1025px) 20vw, (min-width: 768px) 45vw, calc(100vw - 40px)" loading="lazy" decoding="async" /> :
+            <img class="photo-gallery-image" src={asset(image)} alt={alt} loading="lazy" decoding="async" />
+        ) : (
+          <div class="photo-gallery-placeholder" role="img" aria-label={`Gallery image ${index + 1} to come`}>
+            Image {index + 1} to come
+          </div>
+        )}
+        {credit && <figcaption class="photo-gallery-credit">{credit}</figcaption>}
+      </figure>
+    ))}
+  </div>
+</section>

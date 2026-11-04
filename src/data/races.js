@@ -49,7 +49,7 @@ The race was called for Stratton by the Associated Press at poll closing.
 export const stateRaces = [
   {
     id: "governor",
-    title: "Illinois Governor",
+    title: "Governor",
     layout: "image-left",
     image: "https://dailynorthwestern.com/wp-content/uploads/2026/11/jb.jpg",
     imageAlt:
@@ -69,7 +69,7 @@ The Associated Press called the race for Pritzker when polls closed at 7 p.m.
   },
   {
     id: "state-senate-9",
-    title: "Illinois State Senate District 9",
+    title: "Illinois' 9th State Senate District",
     layout: "image-right",
     image:
       "https://dailynorthwestern.com/wp-content/uploads/2026/11/DSC05724-1200x800.jpg",
@@ -90,7 +90,7 @@ As of 8:17 p.m., Hanley had received 82.27% of the vote according to data from t
   },
   {
     id: "state-house-18",
-    title: "18th District State Representative",
+    title: "Illinois' 18th State House District",
     layout: "image-left",
     image:
       "https://dailynorthwestern.com/wp-content/uploads/2023/01/gabel.jpeg",
@@ -111,7 +111,7 @@ The Associated Press called the race in favor of Gabel at 8:07 p.m., according t
   },
   {
     id: "state-house-17",
-    title: "17th District Illinois State Representative",
+    title: "Illinois' 17th State House District",
     layout: "image-right",
     image:
       "https://dailynorthwestern.com/wp-content/uploads/2020/08/KICKOFF_Melanie-Lust_WEB-900x600-1.jpg",
@@ -121,7 +121,7 @@ The Associated Press called the race in favor of Gabel at 8:07 p.m., according t
     articles: [
       {
         title:
-          "Incumbent Jennifer Gong-Gershowitz projected to clinch 5th consecutive term serving 17th district in Illinois House of Representatives",
+          "Incumbent Jennifer Gong-Gershowitz projected to clinch 5th consecutive term serving 17th District in Illinois House of Representatives",
         url: "https://dailynorthwestern.com/2026/11/03/city/incumbent-jennifer-gong-gershowitz-projected-to-clinch-5th-consecutive-term-serving-17th-district-in-illinois-house-of-representatives/",
       },
     ],

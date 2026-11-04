@@ -14,7 +14,7 @@ export const election = {
   subtitle:
     "Welcome to The Daily Northwestern's coverage of the 2026 Midterms.",
   liveCoverage: {
-    text: "TRACK THE DAILY'S LIVE COVERAGE HERE",
+    text: "READ THE DAILY'S LIVE COVERAGE HERE",
     url: "https://dailynorthwestern.com/2026/11/03/city/live-evanston-residents-vote-in-2026-midterm-elections/", // Replace with the published live coverage URL.
   },
   hero: {

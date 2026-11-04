@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ElectionHero from '../components/election/ElectionHero.astro';
+import PhotoGallery from '../components/election/PhotoGallery.astro';
+import { galleryImages } from '../data/gallery.js';
 import ReportedStories from '../components/election/ReportedStories.astro';
 import { reportedStories } from '../data/reportedStories.js';
 import RaceFeaturesSection from '../components/election/RaceFeaturesSection.astro';
@@ -19,9 +21,10 @@ import '../styles/election.scss';
   <div class="election-page">
     <ElectionHero {...election} />
   </div>
-  <ReportedStories stories={reportedStories} />
+  <PhotoGallery images={galleryImages} />
   <RaceFeaturesSection id="federal-races" title="Federal Races" races={federalRaces} />
   <RaceFeaturesSection id="state-races" title="State Races" races={stateRaces} />
+  <ReportedStories stories={reportedStories} />
   </main>
   <Footer credits={election.credits} />
 </Layout>
