@@ -1,0 +1,15 @@
+---
+import RaceCard from './RaceCard.astro';
+const { id, heading, cards } = Astro.props;
+---
+<section class="election-races" aria-labelledby={`${id}-heading`}>
+  <details open>
+    <summary aria-controls={`${id}-cards`}>
+      <h2 id={`${id}-heading`}>{heading}</h2>
+      <span class="election-chevron" aria-hidden="true"></span>
+    </summary>
+    <ul id={`${id}-cards`} class="election-race-grid">
+      {cards.map((card, index) => <RaceCard card={card} index={index} />)}
+    </ul>
+  </details>
+</section>

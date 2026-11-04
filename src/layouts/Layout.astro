@@ -1,0 +1,27 @@
+---
+import '../styles/global.scss';
+const {
+  title = '2026 Election',
+  description = '2026 election coverage from The Daily Northwestern.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} | The Daily Northwestern</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#501e4c" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.png`} />
+  <link rel="stylesheet" href="https://use.typekit.net/ryk0qlm.css" />
+  <slot name="head" />
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <slot />
+</body>
+</html>

@@ -1,0 +1,82 @@
+---
+const { id, title, races } = Astro.props;
+---
+<details class="race-dropdown" data-race-dropdown>
+  <summary aria-controls={`${id}-links`}>
+    <span>{title}</span>
+    <span class="race-dropdown-chevron" aria-hidden="true"></span>
+  </summary>
+  <nav id={`${id}-links`} aria-label={title}>
+    <ul>
+      {races.map(race => <li><a href={`#${race.id}-title`}>{race.title}</a></li>)}
+    </ul>
+  </nav>
+</details>
+<script>
+  for (const dropdown of document.querySelectorAll('details[data-race-dropdown]')) {
+    const summary = dropdown.querySelector('summary');
+    const syncExpanded = () => summary.setAttribute('aria-expanded', String(dropdown.hasAttribute('open')));
+    syncExpanded();
+    dropdown.addEventListener('toggle', syncExpanded);
+  }
+</script>
+<style>
+.race-dropdown { margin-top: 12px; text-align: left; }
+.race-dropdown:first-of-type { margin-top: 20px; }
+.race-dropdown summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 10px 22px;
+  border: 4px solid var(--election-red);
+  border-radius: 999px;
+  background: var(--election-light-blue);
+  color: var(--election-blue);
+  font-family: var(--font-election-headline);
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+}
+.race-dropdown summary::-webkit-details-marker { display: none; }
+.race-dropdown-chevron {
+  flex: 0 0 16px;
+  height: 16px;
+  border-right: 4px solid var(--election-red);
+  border-bottom: 4px solid var(--election-red);
+  transform: translateY(-4px) rotate(45deg);
+  transition: transform 180ms ease;
+}
+.race-dropdown[open] .race-dropdown-chevron { transform: translateY(4px) rotate(225deg); }
+.race-dropdown ul { margin: 0; padding: 12px 22px 4px; list-style: none; }
+.race-dropdown a {
+  display: block;
+  padding: 10px 0;
+  color: var(--election-light-blue);
+  font-family: var(--font-election-body);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.race-dropdown a:hover { text-decoration: underline; }
+/* The document reserves the sticky header through scroll-padding-top. */
+:global(.race-feature h3) { scroll-margin-top: 16px; }
+@supports (interpolate-size: allow-keywords) {
+  .race-dropdown { interpolate-size: allow-keywords; }
+  .race-dropdown::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 180ms ease, content-visibility 180ms allow-discrete;
+  }
+  .race-dropdown[open]::details-content { height: auto; }
+}
+@media (max-width: 600px) {
+  .race-dropdown summary { border-width: 3px; padding: 7px 12px; }
+  .race-dropdown ul { padding-inline: 12px; }
+}
+</style>

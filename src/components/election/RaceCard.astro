@@ -1,0 +1,9 @@
+---
+const { card, index } = Astro.props;
+---
+<li class="election-race-card">
+  <div class="election-race-card-body">
+    {card.label ? <span>{card.label}</span> : <span class="election-sr-only">Race {index + 1}: coverage to come</span>}
+  </div>
+  <div class="election-race-card-strip" aria-hidden="true"></div>
+</li>

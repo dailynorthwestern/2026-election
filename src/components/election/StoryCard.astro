@@ -1,0 +1,15 @@
+---
+import { asset } from '../../lib/content.js';
+const { story } = Astro.props;
+const Tag = story.url ? 'a' : 'div';
+---
+<Tag class="reported-story-card" href={story.url || undefined} tabindex={story.url ? undefined : '0'}>
+  <div class="reported-story-image">
+    {story.image && <img src={asset(story.image)} alt={story.imageAlt || ''} width="1200" height="800" loading="lazy" decoding="async" />}
+  </div>
+  <div class="reported-story-info">
+    <h3>{story.title}</h3>
+    {story.author && <p>{story.author}</p>}
+    {story.date && <p><time datetime={story.dateISO}>{story.date}</time></p>}
+  </div>
+</Tag>

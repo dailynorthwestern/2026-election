@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ElectionHero from '../components/election/ElectionHero.astro';
+import ReportedStories from '../components/election/ReportedStories.astro';
+import { reportedStories } from '../data/reportedStories.js';
+import RaceFeaturesSection from '../components/election/RaceFeaturesSection.astro';
+import { federalRaces, stateRaces } from '../data/races.js';
+import { election } from '../data/election.js';
+import '../styles/election.scss';
+---
+<Layout title={election.title} description={election.subtitle}>
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@700&display=swap" rel="stylesheet" />
+  </Fragment>
+  <Header />
+  <main id="main-content" tabindex="-1">
+  <div class="election-page">
+    <ElectionHero {...election} />
+  </div>
+  <ReportedStories stories={reportedStories} />
+  <RaceFeaturesSection id="federal-races" title="Federal Races" races={federalRaces} />
+  <RaceFeaturesSection id="state-races" title="State Races" races={stateRaces} />
+  </main>
+  <Footer />
+</Layout>

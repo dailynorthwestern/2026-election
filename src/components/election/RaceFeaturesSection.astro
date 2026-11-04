@@ -1,0 +1,12 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import RaceFeature from './RaceFeature.astro';
+import '../../styles/race-features.scss';
+const { id, title, races } = Astro.props;
+---
+<section class="race-features-section" aria-labelledby={`${id}-heading`}>
+  <div class="election-content-container">
+    <SectionHeading id={`${id}-heading`}>{title}</SectionHeading>
+    {races.map(race => <RaceFeature {...race} />)}
+  </div>
+</section>

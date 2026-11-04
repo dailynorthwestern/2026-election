@@ -1,0 +1,17 @@
+---
+import LiveCoverageButton from './LiveCoverageButton.astro';
+import HeroBlurb from './HeroBlurb.astro';
+import RaceDropdown from './RaceDropdown.astro';
+import { federalRaces, stateRaces } from '../../data/races.js';
+const { title, subtitle, liveCoverage, hero } = Astro.props;
+---
+<section class="election-hero" aria-labelledby="election-title">
+  <h1 id="election-title">{title}</h1>
+  <div class="election-content-container">
+  <p class="election-subtitle">{subtitle}</p>
+  <LiveCoverageButton {...liveCoverage} />
+  <HeroBlurb {...hero} />
+  <RaceDropdown id="hero-federal" title="Federal Races" races={federalRaces} />
+  <RaceDropdown id="hero-state" title="State Races" races={stateRaces} />
+  </div>
+</section>

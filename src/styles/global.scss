@@ -1,0 +1,95 @@
+@use "brand";
+:root {
+  --daily-purple: #501e4c;
+  --font-editorial: Georgia, "Times New Roman", serif;
+  --text-primary: #E3DED4;
+  --background-primary: #fff;
+  --burgundy: #5b1d54;
+  --ink: #17151a;
+  --white: #fff;
+  --header-height: 72px;
+  --shell: min(1320px, calc(100vw - 64px));
+  --sans: "akagi-pro", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--background-primary);
+  font-family: var(--font-editorial);
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+body {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid #b87518;
+  outline-offset: 5px;
+}
+[hidden] {
+  display: none !important;
+}
+.shell {
+  width: var(--shell);
+  margin-inline: auto;
+}
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  transform: translateY(-160%);
+  background: white;
+  padding: 0.8rem 1rem;
+}
+.skip-link:focus {
+  transform: none;
+}
+main {
+  flex: 1;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+// Keep responsive tokens after the base :root so they override its defaults.
+// Values match new-ryan-field/src/styles/global.css.
+@media (max-width: 900px) {
+  :root {
+    --shell: min(100% - 40px, 720px);
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --header-height: 58px;
+    --shell: calc(100vw - 32px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import { asset } from '../../lib/content.js';
+const { image, imageAlt = '', blurb } = Astro.props;
+---
+<div class:list={["election-illustration", { "election-illustration--has-image": !!image }]}>
+  {image && typeof image === 'object' ?
+    <Image class="election-illustration-image" src={image} alt={imageAlt} widths={[400, 800, 1200]} sizes="(min-width: 1025px) 60vw, (min-width: 768px) 86vw, calc(100vw - 40px)" format="webp" /> : image ? <img class="election-illustration-image" src={asset(image)} alt={imageAlt} /> :
+    <span class="election-illustration-placeholder">Election illustration placeholder</span>}
+  <div class="election-blurb"><p>{blurb}</p></div>
+</div>

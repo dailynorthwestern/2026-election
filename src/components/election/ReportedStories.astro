@@ -1,0 +1,26 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import StoryCard from './StoryCard.astro';
+import '../../styles/reported-stories.scss';
+const { stories } = Astro.props;
+// Each group has three top-row stories followed by three bottom-row stories.
+// Groups, rather than individual cards, flow horizontally in a shared scroller.
+const groups = Array.from({ length: Math.ceil(stories.length / 6) }, (_, i) => stories.slice(i * 6, i * 6 + 6));
+---
+<section class="reported-stories" aria-labelledby="reported-stories-heading" data-reported-stories>
+  <div class="reported-stories-inner election-content-container">
+    <SectionHeading id="reported-stories-heading">Reported Stories</SectionHeading>
+    <div class="reported-stories-controls" hidden>
+      <button type="button" data-direction="-1" aria-label="Previous stories" aria-controls="reported-stories-track" disabled><span aria-hidden="true">←</span></button>
+      <button type="button" data-direction="1" aria-label="Next stories" aria-controls="reported-stories-track"><span aria-hidden="true">→</span></button>
+    </div>
+    <div id="reported-stories-track" class="reported-stories-track" tabindex="0" role="region" aria-label="Reported stories, scroll horizontally for more" >
+      {groups.map(group => <div class="reported-stories-group">
+        {group.map(story => <StoryCard story={story} />)}
+      </div>)}
+    </div>
+  </div>
+</section>
+<script>
+  import '../../scripts/reported-stories.js';
+</script>

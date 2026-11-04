@@ -1,0 +1,17 @@
+---
+import FlourishEmbed from './FlourishEmbed.astro';
+import { asset } from '../../lib/content.js';
+const { id, title, layout = 'image-left', image, imageAlt = '', flourishId, flourishUrl, description } = Astro.props;
+---
+<article class:list={['race-feature', { 'race-feature--image-right': layout === 'image-right' }]} aria-labelledby={`${id}-title`}>
+  <h3 id={`${id}-title`}>{title}</h3>
+  <div class="race-feature-grid">
+    <div class="race-portrait">
+      {image && <img src={asset(image)} alt={imageAlt} loading="lazy" decoding="async" />}
+    </div>
+    <div class="race-reporting">
+      <FlourishEmbed visualizationId={flourishId} embedUrl={flourishUrl} title={`${title} election visualization`} />
+      <div class="race-description"><p>{description}</p></div>
+    </div>
+  </div>
+</article>
