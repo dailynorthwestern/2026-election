@@ -50,7 +50,7 @@ The GitHub workflow is manual and builds an artifact only; it does not publish t
 
 Change page content in `src/data/election.js`. Set `liveCoverage.url` to the published coverage link; its current fragment is a temporary self-link. Set `hero.image` to an image in `public/` (for example `/assets/election-illustration.webp`) and supply `hero.imageAlt`. Leaving the path empty shows the labeled placeholder. Race cards accept a unique `id` and optional `label`; blank labels leave the visible card empty.
 
-Edit the `--election-*` color tokens and `--font-election-*` font stacks in `src/styles/election.scss`. Oswald Bold and Inter are loaded from Google Fonts in `src/pages/index.astro` with system fallbacks. These substitute fonts apply only within the election page; Georgia and Daily branding remain available through global styles.
+Edit the `--election-*` color tokens and `--font-election-*` font stacks in `src/styles/election.scss`. Trump Gothic Pro Bold and Apparat are loaded through the Adobe Fonts stylesheet in `src/pages/index.astro`. Body text requests Apparat 400 normal with a sans-serif fallback. The Apparat Adobe Fonts kit is linked in `src/pages/index.astro`; the existing branding kit remains in `src/layouts/Layout.astro`. These substitute fonts apply only within the election page; Georgia and Daily branding remain available through global styles.
 
 Race accordions use native `details`/`summary`, start expanded and work with a keyboard without JavaScript.
 

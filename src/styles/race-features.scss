@@ -2,6 +2,8 @@
   background: var(--election-blue);
   color: var(--election-blue);
   font-family: var(--font-election-body);
+  font-weight: 400;
+  font-style: normal;
   padding: 24px 0 64px;
   min-width: 0;
 }
@@ -10,6 +12,7 @@
   margin: 0 0 16px;
   color: var(--election-red);
   font-family: var(--font-election-headline);
+  font-style: normal;
   font-size: clamp(1.5rem, 2.3vw, 2rem);
   font-weight: 700;
   line-height: 1.2;
