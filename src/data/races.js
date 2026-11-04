@@ -1,5 +1,6 @@
 // Set image to a public/ path or HTTPS URL and supply imageAlt.
-// Flourish accepts a numeric flourishId or a public visualization URL in flourishUrl.
+// flourish accepts a numeric visualization ID or a published Flourish URL.
+// With flourish: null, articles render instead. Add { title, url } entries to articles.
 const description = "Election analysis and reporting will appear here.";
 export const federalRaces = [
   {
@@ -8,8 +9,11 @@ export const federalRaces = [
     layout: "image-left",
     image: null,
     imageAlt: "",
-    flourishId: null,
-    flourishUrl: null,
+    flourish: null,
+    articles: [{
+      title: "Your article headline",
+      url: "https://dailynorthwestern.com/your-article/",
+    }],
     description,
   },
   {
@@ -18,8 +22,8 @@ export const federalRaces = [
     layout: "image-right",
     image: null,
     imageAlt: "",
-    flourishId: null,
-    flourishUrl: null,
+    flourish: null,
+    articles: [],
     description,
   },
 ];
@@ -28,11 +32,18 @@ export const stateRaces = [
     id: "governor",
     title: "Illinois Governor",
     layout: "image-left",
-    image: null,
-    imageAlt: "",
-    flourishId: null,
-    flourishUrl: null,
-    description,
+    image: "https://dailynorthwestern.com/wp-content/uploads/2026/11/jb.jpg",
+    imageAlt: "Gov. JB Pritzker is projected to win reelection to his third term, defeating Republican challenger and former Illinois state representative Darren Bailey.",
+    flourish: null,
+    articles: [{
+      title: "JB Pritzker projected to win reelection",
+      url: "https://dailynorthwestern.com/2026/11/03/lateststories/jb-pritzker-projected-to-win-reelection/",
+    }],
+    description: `Gov. JB Pritzker is projected to win reelection to his third term, defeating Republican challenger and former Illinois state representative Darren Bailey.
+
+The Associated Press called the race for Pritzker when polls closed at 7 p.m. 
+
+ — Reported by Gabe Hawkins`,
   },
   {
     id: "state-senate-9",
@@ -40,8 +51,8 @@ export const stateRaces = [
     layout: "image-right",
     image: null,
     imageAlt: "",
-    flourishId: null,
-    flourishUrl: null,
+    flourish: null,
+    articles: [],
     description,
   },
   {
@@ -50,8 +61,8 @@ export const stateRaces = [
     layout: "image-left",
     image: null,
     imageAlt: "",
-    flourishId: null,
-    flourishUrl: null,
+    flourish: null,
+    articles: [],
     description,
   },
   {
@@ -60,8 +71,8 @@ export const stateRaces = [
     layout: "image-right",
     image: null,
     imageAlt: "",
-    flourishId: null,
-    flourishUrl: null,
+    flourish: null,
+    articles: [],
     description,
   },
 ];

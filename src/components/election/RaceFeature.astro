@@ -1,17 +1,27 @@
 ---
 import FlourishEmbed from './FlourishEmbed.astro';
+import '../../styles/story-headline.scss';
 import { asset } from '../../lib/content.js';
-const { id, title, layout = 'image-left', image, imageAlt = '', flourishId, flourishUrl, description } = Astro.props;
+const { id, title, image, imageAlt = '', flourishId, flourishUrl, flourish, articles = [], description } = Astro.props;
+// Explicit flourish: null takes precedence over legacy embed fields.
+const visualization = flourish === undefined ? (flourishUrl || flourishId) : flourish;
+const embedProps = visualization && /^\d+$/.test(String(visualization))
+  ? { visualizationId: visualization }
+  : { embedUrl: visualization };
 ---
-<article class:list={['race-feature', { 'race-feature--image-right': layout === 'image-right' }]} aria-labelledby={`${id}-title`}>
+<article class="race-feature" aria-labelledby={`${id}-title`}>
   <h3 id={`${id}-title`}>{title}</h3>
   <div class="race-feature-grid">
     <div class="race-portrait">
       {image && <img src={asset(image)} alt={imageAlt} loading="lazy" decoding="async" />}
     </div>
-    <div class="race-reporting">
-      <FlourishEmbed visualizationId={flourishId} embedUrl={flourishUrl} title={`${title} election visualization`} />
-      <div class="race-description"><p>{description}</p></div>
-    </div>
+    <div class="race-description"><p>{description}</p></div>
+    {visualization ? (
+      <FlourishEmbed {...embedProps} title={`${title} election visualization`} />
+    ) : articles.length > 0 ? (
+      <ul class="race-articles" aria-label={`${title} related reporting`}>
+        {articles.map(article => <li><a class="story-headline" href={article.url}>{article.title}</a></li>)}
+      </ul>
+    ) : null}
   </div>
 </article>

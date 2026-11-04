@@ -7,7 +7,9 @@
   padding: 24px 0 64px;
   min-width: 0;
 }
-.race-feature { margin-top: 40px; }
+.race-feature {
+  margin-top: 40px;
+}
 .race-feature h3 {
   margin: 0 0 16px;
   color: var(--election-red);
@@ -18,24 +20,75 @@
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
-.race-feature-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(16px, 2.5vw, 32px); }
-.race-portrait { background: var(--election-light-blue); aspect-ratio: 4 / 5; min-width: 0; position: relative; }
-.race-portrait img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
-.race-reporting { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
-.race-visualization { width: 100%; aspect-ratio: 4 / 1; min-height: 100px; background: var(--election-white); }
-.race-visualization iframe { display: block; width: 100%; height: 100%; border: 0; }
-.race-visualization-placeholder { min-height: inherit; height: 100%; display: grid; place-items: center; text-align: center; padding: 12px; font-size: .9375rem; }
-.race-description { background: var(--election-light-blue); flex: 1; padding: clamp(18px, 2.5vw, 32px); display: grid; align-items: center; }
-.race-description p { margin: 0; font-size: clamp(1rem, 1.6vw, 1.375rem); line-height: 1.5; overflow-wrap: anywhere; }
-.race-feature--image-right h3 { text-align: right; }
-.race-feature--image-right .race-feature-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
-.race-feature--image-right .race-portrait { grid-column: 2; grid-row: 1; }
-.race-feature--image-right .race-reporting { grid-column: 1; grid-row: 1; }
+.race-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: clamp(16px, 2.5vw, 32px);
+}
+.race-portrait {
+  background: var(--election-light-blue);
+  aspect-ratio: 8 / 5;
+  min-width: 0;
+  position: relative;
+}
+.race-portrait img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.race-visualization {
+  grid-column: 1 / -1;
+  width: 100%;
+  aspect-ratio: 4 / 1;
+  min-height: 100px;
+  background: var(--election-white);
+}
+.race-visualization iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.race-articles {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+  background: var(--election-light-blue);
+  display: grid;
+  gap: 16px;
+}
+.race-articles a { display: block; }
+.race-description {
+  background: var(--election-light-blue);
+  min-width: 0;
+  padding: clamp(18px, 1.5vw, 32px);
+  display: grid;
+  align-items: center;
+}
+.race-description p {
+  margin: 0;
+  font-size: clamp(1rem, 0.5vw, 1.375rem);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
 @media (max-width: 767px) {
-  .race-features-section { padding: 20px 0 40px; }
-  .race-feature { margin-top: 28px; }
-  .race-feature .race-feature-grid { grid-template-columns: minmax(0, 1fr); }
-  .race-feature .race-portrait, .race-feature .race-reporting { grid-column: auto; grid-row: auto; }
-  .race-portrait { width: 100%; max-width: 320px; margin-inline: auto; }
-  .race-visualization { min-height: 120px; }
+  .race-features-section {
+    padding: 20px 0 40px;
+  }
+  .race-feature {
+    margin-top: 28px;
+  }
+  .race-feature .race-feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .race-portrait {
+    width: 100%;
+  }
+  .race-visualization {
+    min-height: 120px;
+  }
 }

@@ -29,7 +29,7 @@ export const reportedStories = [
     date: 'November 2, 2026',
     dateISO: '2026-11-02',
     url: 'https://dailynorthwestern.com/2026/11/02/city/evanston-poll-party-asks-voters-why-they-cast-their-ballot/',
-    image: 'https://dailynorthwestern.com/wp-content/uploads/2026/11/Postcarding-1200x900.jpeg',
+    image: 'https://dailynorthwestern.com/wp-content/uploads/2026/11/DSC05554-1200x800.jpg',
     imageAlt: 'A person stands at podium with slide presentation.',
   },
   {

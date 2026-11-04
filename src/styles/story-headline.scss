@@ -1,0 +1,15 @@
+.story-headline {
+  font-family: var(--font-election-body);
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  color: var(--election-blue);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+a.story-headline:hover,
+a.reported-story-card:hover .story-headline {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}

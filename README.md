@@ -66,7 +66,7 @@ The `.election-content-container` class in `src/styles/election.scss` uses `--el
 
 ## Federal and State race features
 
-Edit `src/data/races.js` for all six races: `title` changes a race title; `image` and `imageAlt` configure the illustration; `flourishId` accepts a numeric visualization ID, or `flourishUrl` accepts a published Flourish visualization/embed URL; `description` changes the explanatory text; `layout` selects `image-left` or `image-right`. Local illustrations belong in `public/assets/` and use `/assets/filename.webp` paths.
+Edit `src/data/races.js` for all six races: `title` changes a race title; `image` and `imageAlt` configure the illustration; `flourishId` accepts a numeric visualization ID, or `flourishUrl` accepts a published Flourish visualization/embed URL; `description` changes the explanatory text. Each feature uses a 60/40 image-and-text row followed by a full-width visualization; mobile stacks image, text and visualization. Local illustrations belong in `public/assets/` and use `/assets/filename.webp` paths.
 
 The reusable feature layout is in `src/components/election/RaceFeature.astro`, with styling in `src/styles/race-features.scss`. `FlourishEmbed.astro` uses Flourish's official iframe endpoint, provides an accessible title and lazy loading, and renders a labeled placeholder when no ID/URL is configured. It loads no Flourish embed script. Check the published visualization at mobile and desktop sizes when adding real charts.
 
@@ -75,3 +75,9 @@ All three major pill headings share `src/components/election/SectionHeading.astr
 ## Hero race dropdowns
 
 `src/components/election/RaceDropdown.astro` supplies the two native, independently expandable hero menus. Their names and anchor targets come from `src/data/races.js` and point to the existing race heading IDs. Both start collapsed and work without JavaScript; a small enhancement synchronizes `aria-expanded`. Supported browsers animate expansion, with reduced-motion preferences respected.
+
+## Race visualization and related articles
+
+In `src/data/races.js`, set `flourish` to a numeric visualization ID or public Flourish URL to display the existing embed. Set `flourish: null` to show the race's `articles` array instead. Add related reporting as `{ title: 'Published headline', url: 'https://dailynorthwestern.com/...' }`. An empty array renders nothing below the image/text row. Legacy `flourishId` and `flourishUrl` remain supported when `flourish` is omitted.
+
+Race article links and Reported Stories card headlines share `src/styles/story-headline.scss`.
