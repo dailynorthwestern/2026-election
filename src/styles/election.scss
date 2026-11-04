@@ -124,7 +124,7 @@
   
   color: var(--election-light-blue);
 }
-.election-blurb p { max-width: 660px; margin: auto; font-size: clamp(1.125rem, 1.3vw, 1.75rem); line-height: 1.4; text-wrap: balance; }
+.election-blurb p { white-space: pre-line; max-width: 660px; margin: auto; font-size: clamp(1.125rem, 1.3vw, 1.75rem); line-height: 1.4; text-wrap: balance; }
 .election-races { margin-top: 20px; }
 .election-races summary {
   display: flex;

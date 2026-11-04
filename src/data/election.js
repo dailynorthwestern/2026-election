@@ -11,7 +11,13 @@ export const election = {
   hero: {
     image: heroImage,
     imageAlt: 'Midterm election coverage illustration with I Voted stickers and a map.',
-    blurb: `Polls closed in Evanston at 7 p.m., concluding an election cycle marked by major retirements. The March 17 primary elections featured competitive races to represent the city in the Illinois State Senate, U.S. House of Representatives and U.S. Senate. Democrats were heavily favored in all general election races.`,
+    blurb: `The 2026 Midterm Elections marked a once-in-a-generation opportunity for Evanston residents to decide who will represent them in Evanston in Springfield and Washington as Illinois saw an exodus of elected officials this year.
+
+From traveling to polls across the city to attending campaign watch parties, The Daily staff provided live updates to document the perspectives of Evanston voters and election results throughout the day.
+
+Thank you to the reporters, editors, multimedia staff and the city assistant team for your tireless work made that this coverage possible.
+
+— Claire Coffey, City Editor`,
   },
   raceSections: [
     {
