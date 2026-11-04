@@ -1,7 +1,9 @@
-// Set image to a public/ path or HTTPS URL and supply imageAlt.
+// Set image to a public/ path, imported image or HTTPS URL and supply imageAlt.
+// imageCredit format: "Lauren Shein/The Daily Northwestern"; empty credits are hidden.
 // flourish accepts a numeric visualization ID or a published Flourish URL.
 // With flourish: null, articles render instead. Add { title, url } entries to articles.
 import biss from "../assets/Biss.jpg";
+import stratton from "../assets/stratton.jpg";
 
 const description = "Election analysis and reporting will appear here.";
 export const federalRaces = [
@@ -11,6 +13,7 @@ export const federalRaces = [
     layout: "image-left",
     image: biss,
     imageAlt: "Daniel Biss",
+    imageCredit: "",
     flourish: null,
     articles: [
       {
@@ -26,8 +29,9 @@ The Associated Press called the race for Biss at 7:50 p.m. â€” Reported by Allis
     id: "us-senate",
     title: "U.S. Senate",
     layout: "image-right",
-    image: "https://dailynorthwestern.com/wp-content/uploads/2026/11/image-3-e1793765918660-1200x878-1.png",
+    image: stratton,
     imageAlt: "Juliana Stratton",
+    imageCredit: "Karim Melek/The Daily Northwestern",
     flourish: null,
     articles: [{
       title: "Stratton projected to win U.S. Senate race",
@@ -47,6 +51,7 @@ export const stateRaces = [
     image: "https://dailynorthwestern.com/wp-content/uploads/2026/11/jb.jpg",
     imageAlt:
       "Gov. JB Pritzker is projected to win reelection to his third term, defeating Republican challenger and former Illinois state representative Darren Bailey.",
+    imageCredit: "Emma Edmund/The Daily Northwestern",
     flourish: null,
     articles: [
       {
@@ -64,6 +69,7 @@ The Associated Press called the race for Pritzker when polls closed at 7 p.m. â€
     layout: "image-right",
     image: "https://dailynorthwestern.com/wp-content/uploads/2026/11/DSC05724-1200x800.jpg",
     imageAlt: "Hanley previously served as president of the New Trier Democrats and co-founded advocacy group Operation Swing State.",
+    imageCredit: "Michelle Wu/The Daily Northwestern",
     flourish: null,
     articles: [ 
       {
@@ -78,8 +84,9 @@ As of 8:17 p.m., Hanley had received 82.27% of the vote according to data from t
     id: "state-house-18",
     title: "18th District State Rep",
     layout: "image-left",
-    image: null,
+    image: 'https://dailynorthwestern.com/wp-content/uploads/2023/01/gabel.jpeg',
     imageAlt: "",
+    imageCredit: "Daily file photo by Courtney Morrison",
     flourish: null,
     articles: [{
       title: "State House Majority Leader Robyn Gabel projected to win reelection",
@@ -93,8 +100,9 @@ The Associated Press called the race in favor of Gabel at 8:07 p.m., according t
     id: "state-house-17",
     title: "17th District Illinois State Rep",
     layout: "image-right",
-    image: null,
+    image: 'https://dailynorthwestern.com/wp-content/uploads/2020/08/KICKOFF_Melanie-Lust_WEB-900x600-1.jpg',
     imageAlt: "",
+    imageCredit: "Daily file photo by Melanie Lust",
     flourish: null,
     articles: [{
       title: "Incumbent Jennifer Gong-Gershowitz projected to clinch 5th consecutive term serving 17th district in Illinois House of Representatives",

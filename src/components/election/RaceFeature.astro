@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import FlourishEmbed from './FlourishEmbed.astro';
 import { asset } from '../../lib/content.js';
-const { id, title, image, imageAlt = '', flourishId, flourishUrl, flourish, articles = [], description } = Astro.props;
+const { id, title, image, imageAlt = '', imageCredit = '', flourishId, flourishUrl, flourish, articles = [], description } = Astro.props;
 // Explicit flourish: null takes precedence over legacy embed fields.
 const visualization = flourish === undefined ? (flourishUrl || flourishId) : flourish;
 const embedProps = visualization && /^\d+$/.test(String(visualization))
@@ -12,11 +12,14 @@ const embedProps = visualization && /^\d+$/.test(String(visualization))
 <article class="race-feature" aria-labelledby={`${id}-title`}>
   <h3 id={`${id}-title`}>{title}</h3>
   <div class="race-feature-grid">
+    <figure class="race-photo">
     <div class="race-portrait">
       {image && (typeof image === 'object'
         ? <Image src={image} alt={imageAlt} loading="lazy" decoding="async" />
         : <img src={asset(image)} alt={imageAlt} loading="lazy" decoding="async" />)}
     </div>
+    {image && imageCredit && <figcaption class="race-photo-credit">{imageCredit}</figcaption>}
+    </figure>
     <div class="race-description"><p>{description}</p></div>
     {visualization ? (
       <FlourishEmbed {...embedProps} title={`${title} election visualization`} />
