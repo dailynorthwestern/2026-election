@@ -23,5 +23,17 @@ const {
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <slot />
+  <script>
+    function configureExternalLinks() {
+      for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href]')) {
+        const url = new URL(link.href, window.location.href);
+        if (!['http:', 'https:'].includes(url.protocol) || url.origin === window.location.origin) continue;
+        link.target = '_blank';
+        link.relList.add('noopener', 'noreferrer');
+      }
+    }
+    configureExternalLinks();
+    document.addEventListener('astro:page-load', configureExternalLinks);
+  </script>
 </body>
 </html>
