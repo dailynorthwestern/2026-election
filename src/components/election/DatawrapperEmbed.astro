@@ -1,0 +1,38 @@
+---
+const { embed, title } = Astro.props;
+// Read iframe attributes only; pasted scripts and other HTML are never rendered.
+const iframe = String(embed).match(/<iframe\b[^>]*>/i)?.[0];
+if (!iframe) throw new Error('Provide a Datawrapper iframe embed code.');
+const attribute = (name) => iframe.match(new RegExp(`\\s${name}\\s*=\\s*["']([^"']*)["']`, 'i'))?.[1];
+const url = new URL(attribute('src') || '');
+if (url.protocol !== 'https:' || url.hostname !== 'datawrapper.dwcdn.net' || !/^\/[a-zA-Z0-9]+\/(?:\d+\/)?$/.test(url.pathname)) {
+  throw new Error('Use an HTTPS datawrapper.dwcdn.net chart iframe.');
+}
+const height = Number(attribute('height'));
+const initialHeight = Number.isFinite(height) && height > 0 ? height : 400;
+---
+<div class="race-visualization">
+  <iframe
+    data-datawrapper
+    src={url.href}
+    title={attribute('title') || title}
+    aria-label={attribute('aria-label')}
+    height={initialHeight}
+    scrolling="no"
+    loading="lazy"
+  ></iframe>
+</div>
+
+<script>
+  window.addEventListener('message', (event) => {
+    if (event.origin !== 'https://datawrapper.dwcdn.net') return;
+    const heights = event.data?.['datawrapper-height'];
+    if (!heights || typeof heights !== 'object') return;
+    for (const iframe of document.querySelectorAll<HTMLIFrameElement>('iframe[data-datawrapper]')) {
+      if (iframe.contentWindow !== event.source) continue;
+      const chartId = new URL(iframe.src).pathname.split('/')[1];
+      const height = Number(heights[chartId]);
+      if (Number.isFinite(height) && height > 0) iframe.style.height = `${height}px`;
+    }
+  });
+</script>

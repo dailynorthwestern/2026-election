@@ -1,7 +1,8 @@
 // Set image to a public/ path, imported image or HTTPS URL and supply imageAlt.
 // imageCredit format: "Lauren Shein/The Daily Northwestern"; empty credits are hidden.
-// flourish accepts a numeric visualization ID or a published Flourish URL.
-// With flourish: null, articles render instead. Add { title, url } entries to articles.
+// datawrapper accepts the iframe HTML copied from Datawrapper Publish & Embed.
+// The optional accompanying script can be included; resizing is handled by the component.
+// Set datawrapper: null to omit the chart. Articles always render below it.
 import biss from "../assets/Biss.jpg";
 import stratton from "../assets/stratton.jpg";
 
@@ -14,7 +15,7 @@ export const federalRaces = [
     image: biss,
     imageAlt: "Daniel Biss",
     imageCredit: "Quinn Yates/The Daily Northwestern",
-    flourish: null,
+    datawrapper: '<iframe title="U.S. House IL-09 Election" aria-label="Bar Chart" id="datawrapper-chart-RueGZ" src="https://datawrapper.dwcdn.net/RueGZ/40/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="143" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>',
     articles: [
       {
         title: "Biss wins Illinois’ 9th Congressional District race",
@@ -33,7 +34,7 @@ The Associated Press called the race for Biss at 7:50 p.m.
     image: stratton,
     imageAlt: "Juliana Stratton",
     imageCredit: "Karim Melek/The Daily Northwestern",
-    flourish: null,
+    datawrapper: '<iframe title="U.S. Senate Election" aria-label="Bar Chart" id="datawrapper-chart-B5uUi" src="https://datawrapper.dwcdn.net/B5uUi/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="143" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>',
     articles: [
       {
         title: "Stratton projected to win U.S. Senate race",
@@ -55,7 +56,7 @@ export const stateRaces = [
     imageAlt:
       "Gov. JB Pritzker is projected to win reelection to his third term, defeating Republican challenger and former Illinois state representative Darren Bailey.",
     imageCredit: "Emma Edmund/The Daily Northwestern",
-    flourish: null,
+    datawrapper: '<iframe title="Illinois Governor Election" aria-label="Bar Chart" id="datawrapper-chart-us1Ah" src="https://datawrapper.dwcdn.net/us1Ah/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="143" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>',
     articles: [
       {
         title: "JB Pritzker projected to win reelection",
@@ -76,7 +77,7 @@ The Associated Press called the race for Pritzker when polls closed at 7 p.m.
     imageAlt:
       "Hanley previously served as president of the New Trier Democrats and co-founded advocacy group Operation Swing State.",
     imageCredit: "Michelle Wu/The Daily Northwestern",
-    flourish: null,
+    datawrapper: '<iframe title="Illinois State Senate District 9 Election" aria-label="Bar Chart" id="datawrapper-chart-mIBy9" src="https://datawrapper.dwcdn.net/mIBy9/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="143" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>',
     articles: [
       {
         title: "Patrick Hanley projected to win 9th District State Senate race",
@@ -96,7 +97,7 @@ As of 8:17 p.m., Hanley had received 82.27% of the vote according to data from t
       "https://dailynorthwestern.com/wp-content/uploads/2020/08/KICKOFF_Melanie-Lust_WEB-900x600-1.jpg",
     imageAlt: "",
     imageCredit: "Daily file photo by Melanie Lust",
-    flourish: null,
+    datawrapper: '<iframe title="Illinois 17th District State Representative Election" aria-label="Bar Chart" id="datawrapper-chart-SmxdY" src="https://datawrapper.dwcdn.net/SmxdY/26/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="143" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>',
     articles: [
       {
         title:
@@ -117,7 +118,7 @@ The Associated Press called the race in favor of Gong-Gershowitz at 8:34 p.m.
       "https://dailynorthwestern.com/wp-content/uploads/2023/01/gabel.jpeg",
     imageAlt: "",
     imageCredit: "Daily file photo by Courtney Morrison",
-    flourish: null,
+    datawrapper: '<iframe title="Illinois 18th District State Representative Election" aria-label="Bar Chart" id="datawrapper-chart-LQziq" src="https://datawrapper.dwcdn.net/LQziq/18/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="143" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>',
     articles: [
       {
         title:

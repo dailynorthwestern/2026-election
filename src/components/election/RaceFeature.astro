@@ -1,13 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import FlourishEmbed from './FlourishEmbed.astro';
+import DatawrapperEmbed from './DatawrapperEmbed.astro';
 import { asset } from '../../lib/content.js';
-const { id, title, image, imageAlt = '', imageCredit = '', flourishId, flourishUrl, flourish, articles = [], description } = Astro.props;
-// Explicit flourish: null takes precedence over legacy embed fields.
-const visualization = flourish === undefined ? (flourishUrl || flourishId) : flourish;
-const embedProps = visualization && /^\d+$/.test(String(visualization))
-  ? { visualizationId: visualization }
-  : { embedUrl: visualization };
+const { id, title, image, imageAlt = '', imageCredit = '', datawrapper, articles = [], description } = Astro.props;
 ---
 <article class="race-feature" aria-labelledby={`${id}-title`}>
   <h3 id={`${id}-title`}>{title}</h3>
@@ -21,12 +16,13 @@ const embedProps = visualization && /^\d+$/.test(String(visualization))
     {image && imageCredit && <figcaption class="race-photo-credit">{imageCredit}</figcaption>}
     </figure>
     <div class="race-description"><p>{description}</p></div>
-    {visualization ? (
-      <FlourishEmbed {...embedProps} title={`${title} election visualization`} />
-    ) : articles.length > 0 ? (
+    {datawrapper && (
+      <DatawrapperEmbed embed={datawrapper} title={`${title} election visualization`} />
+    )}
+    {articles.length > 0 && (
       <ul class="race-articles" aria-label={`${title} related reporting`}>
         {articles.map(article => <li><a class="race-article-headline" href={article.url}>{article.title}</a></li>)}
       </ul>
-    ) : null}
+    )}
   </div>
 </article>
